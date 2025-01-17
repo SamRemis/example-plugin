@@ -1,0 +1,24 @@
+[project]
+name = "example-plugin"
+version = "0.0.0a"
+dependencies = [
+  "botocore>=1.35.0",
+]
+requires-python = ">= 3.8"
+readme = "README.md"
+license = {text = "Apache 2.0"}
+keywords = ["botocore", "boto3", "plugin", "aws",]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+    "ruff",
+    "pre-commit"
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/plugin"]
