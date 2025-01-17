@@ -7,12 +7,11 @@ logger = logging.getLogger(__name__)
 
 
 class HttpMethodPlugin:
-
     # This method will be used to register your custom functionality to a botocore client.
     # Customers will manually call this method to attach the plugin to the clients they
     # create
     def initialize_sample_plugin(self, client: BaseClient) -> None:
-        client.meta.events.register('before-call.*.*', self.log_http_method)
+        client.meta.events.register("before-call.*.*", self.log_http_method)
 
     # The arguments that will be passed into this function are controlled by botocore
     # and dependent on the event

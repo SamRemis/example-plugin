@@ -8,8 +8,8 @@ def test_log_http_method(caplog):
     plugin = HttpMethodPlugin()
 
     operation_model = Mock(spec=OperationModel)
-    operation_model.name = 'TestOperation'
-    operation_model.http = {'method': 'GET'}
+    operation_model.name = "TestOperation"
+    operation_model.http = {"method": "GET"}
 
     with caplog.at_level(logging.INFO):
         plugin.log_http_method(operation_model)
